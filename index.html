@@ -7,11 +7,12 @@
     <title>DMS</title>
     <link rel="stylesheet" href="public/assets/css/style.css">
     <link rel="stylesheet" href="public/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="public\assets\css\stransition.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    
 </head>
 <body>
 <!--START SECTION 1 - THE NAVBAR SECTION-->
@@ -565,6 +566,25 @@ if (typeof bootstrap !== 'undefined') {
 } else {
     console.error('Erreur: Bootstrap JS non chargé!');
 }
+document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const elements = entry.target.querySelectorAll('> div');
+                        elements.forEach((el, index) => {
+                            setTimeout(() => {
+                                el.classList.add('animate');
+                            }, index * 150); // Délai progressif entre les éléments
+                        });
+                    }
+                });
+            }, {threshold: 0.15});
+
+            document.querySelectorAll('.services .row > [class*="col-"]').forEach(col => {
+                observer.observe(col);
+            });
+        });
 </script>
+
 </body>
 </html>
