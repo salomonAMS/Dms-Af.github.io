@@ -3149,13 +3149,13 @@ textarea.form-control-lg {
 }
 
 .btn-outline-primary {
-  color: #9926f0;
-  border-color: #9926f0;
+  color: #1435ed;
+  border-color: #2d26f0;
 }
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #9926f0;
-  border-color: #9926f0;
+  background-color: #5877f1;
+  border-color: #2940f4;
 }
 .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(153, 38, 240, 0.5);
@@ -3174,27 +3174,27 @@ textarea.form-control-lg {
 }
 
 .btn-outline-secondary {
-  color: #d122e3;
-  border-color: #d122e3;
+  color: #3971ea;
+  border-color: #4222e3;
 }
 .btn-outline-secondary:hover {
   color: #000;
-  background-color: #d122e3;
-  border-color: #d122e3;
+  background-color: #5694f1;
+  border-color: #5922e3;
 }
 .btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(209, 34, 227, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(135, 206, 235, 0.95);
 }
 .btn-check:checked + .btn-outline-secondary, .btn-check:active + .btn-outline-secondary, .btn-outline-secondary:active, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show {
   color: #000;
-  background-color: #d122e3;
-  border-color: #d122e3;
+  background-color: #227fe3;
+  border-color: #5f22e3;
 }
 .btn-check:checked + .btn-outline-secondary:focus, .btn-check:active + .btn-outline-secondary:focus, .btn-outline-secondary:active:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.25rem rgba(209, 34, 227, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(135, 206, 235, 0.95);
 }
 .btn-outline-secondary:disabled, .btn-outline-secondary.disabled {
-  color: #d122e3;
+  color: #3c22e3;
   background-color: transparent;
 }
 
@@ -10882,7 +10882,7 @@ textarea.form-control-lg {
 }
 
 .intro-section {
-  background: linear-gradient(to right, rgba(0, 0, 139, 0.95), rgba(135, 206, 235, 0.95));;
+  background: linear-gradient(to right, rgba(0, 0, 139, 0.95), rgba(135, 206, 235, 0.95));
   padding: 10rem 0 0 0;
   width: 100%;
   height: 100%;
@@ -10917,15 +10917,23 @@ textarea.form-control-lg {
   padding: 0 0 5rem 0;
 }
 .campanies__logo-box {
-  max-width: 100%;
+  width: 50%; /* prendra la moitié de son parent */
+  min-width: 200px; /* mais jamais plus petit que 200px */
   height: 3rem;
   margin-bottom: 2rem;
   padding: 0.5rem;
   text-align: center;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* important pour éviter que l'image dépasse */
 }
+
 .campanies__logo-box img {
-  height: 100%;
+  max-height: 200%;
+  max-width: 200%;
+  object-fit: contain; /* garde les proportions sans déformation */
 }
 .campanies__logo-box img:hover {
   filter: grayscale(120);
@@ -10968,7 +10976,7 @@ textarea.form-control-lg {
 .testimonials {
   position: relative;
   padding: 0;
-  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(209, 34, 227, 0.95));
+  background: linear-gradient(to right, rgba(0, 0, 139, 0.95), rgba(135, 206, 235, 0.95));
 }
 .testimonials__card {
   background-color: rgba(255, 255, 255, 0.8);
@@ -10979,10 +10987,10 @@ textarea.form-control-lg {
 }
 .testimonials__card i {
   font-size: 1.5rem;
-  color: rgba(153, 38, 240, 0.7);
+  color: #004080;
 }
 .testimonials__card .ratings i {
-  color: rgba(153, 38, 240, 0.7);
+  color:#ffc107;
   font-size: 1rem;
 }
 .testimonials__picture {
@@ -10993,7 +11001,7 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 .testimonials__picture img {
-  border: 0.325rem solid rgba(153, 38, 240, 0.7);
+  border: 0.325rem solid #0d6efd;
 }
 .testimonials__name {
   padding-top: 3rem;
@@ -11024,14 +11032,14 @@ textarea.form-control-lg {
   height: 18.5rem;
   overflow: hidden;
   margin-bottom: 1.2rem;
-  border-top: 0.5rem solid #c685f7;
+  border-top: 0.5rem solid #3b93eb;
 }
 .portfolio-box img {
   width: 100%;
   height: 100%;
 }
 .portfolio-box .portfolio-info {
-  background-color: rgba(153, 38, 240, 0.75);
+  background-color: #3b93eb;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -11214,6 +11222,107 @@ textarea.form-control-lg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.loader {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.truckWrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: hidden;
+}
+/* truck upper body */
+.truckBody {
+  width: 130px;
+  height: fit-content;
+  margin-bottom: 6px;
+  animation: motion 1s linear infinite;
+}
+/* truck suspension animation*/
+@keyframes motion {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* truck's tires */
+.truckTires {
+  width: 130px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 15px;
+  position: absolute;
+  bottom: 0;
+}
+.truckTires svg {
+  width: 24px;
+}
+
+.road {
+  width: 100%;
+  height: 1.5px;
+  background-color: #282828;
+  position: relative;
+  bottom: 0;
+  align-self: flex-end;
+  border-radius: 3px;
+}
+.road::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background-color: #282828;
+  right: -50%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 10px solid white;
+}
+.road::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #282828;
+  right: -65%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 4px solid white;
+}
+
+.lampPost {
+  position: absolute;
+  bottom: 0;
+  right: -90%;
+  height: 90px;
+  animation: roadAnimation 1.4s linear infinite;
+}
+
+@keyframes roadAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-350px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
