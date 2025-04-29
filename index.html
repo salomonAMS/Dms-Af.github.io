@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DMS</title>
+    <link rel="stylesheet" href="public/assets/css/style.css">
+    <link rel="stylesheet" href="public/assets/css/mycss.css">
+    <link rel="stylesheet" href="public/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="public\assets\css\stransition.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
   <!-- From Uiverse.io by vinodjangid07 --> 
 <div class="loader">
   <div class="truckWrapper">
@@ -132,20 +148,6 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
   </div>
 </div>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DMS</title>
-    <link rel="stylesheet" href="public/assets/css/style.css">
-    <link rel="stylesheet" href="public/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="public\assets\css\stransition.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-</head>
-<body>
 <!--START SECTION 1 - THE NAVBAR SECTION-->
 <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
     <div class="container">
@@ -1217,6 +1219,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
+<script>
+  window.addEventListener('load', function () {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 600);
+  });
+</script>
 </body>
 </html>
