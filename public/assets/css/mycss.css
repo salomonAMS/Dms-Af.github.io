@@ -107,4 +107,7 @@
       transform: translateX(-350px);
     }
   }
-  
+  .flag-icon {
+    vertical-align: middle;
+    margin: 0 2px;
+}
