@@ -4,19 +4,36 @@
   --front-color: #4f29f0;
   --back-color: #c3c8de;
   --text-color: #414856;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  border-radius: 50px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  border-radius: 0; /* Suppression des bords arrondis */
+  transform: none; /* Suppression de la transformation */
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  padding: 20px;
+  z-index: 999999; /* Z-index très élevé pour être au-dessus de tout */
+  padding: 0; /* Suppression du padding */
+  margin: 0; /* Suppression des marges */
+  overflow: hidden;
+}
+
+/* Masquer tous les éléments pendant le chargement */
+body.loading {
+  overflow: hidden !important;
+}
+
+body.loading > *:not(#wifi-loader) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Masquer la barre de défilement pendant le chargement */
+body.loading::-webkit-scrollbar {
+  display: none !important;
 }
 
 
@@ -277,18 +294,18 @@ section {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09b5ea;
+  background: #b0b1b1;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2721e4;
+  background: #8e8d90;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7a1ec0;
+  background: #5330f1;
 }
 
 /* Animation de transition pour les sections */
@@ -298,4 +315,32 @@ section {
 
 section:target {
   transform: translateY(0);
+}
+
+/* Animation pour les éléments du portfolio */
+.portfolio-box {
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.portfolio-box.top-left {
+  transform: translate(-100px, -100px) scale(0.8);
+}
+
+.portfolio-box.top-right {
+  transform: translate(100px, -100px) scale(0.8);
+}
+
+.portfolio-box.bottom-left {
+  transform: translate(-100px, 100px) scale(0.8);
+}
+
+.portfolio-box.bottom-right {
+  transform: translate(100px, 100px) scale(0.8);
+}
+
+.portfolio-box.active {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
 }

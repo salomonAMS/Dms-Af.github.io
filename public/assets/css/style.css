@@ -2319,7 +2319,7 @@ textarea.form-control-lg {
   height: 1.5em;
   border-radius: 0.25rem;
 }
-.form-control-color::-webkit-color-swatch {
+.form-control-color::--color-swatch {
   height: 1.5em;
   border-radius: 0.25rem;
 }
@@ -2504,7 +2504,7 @@ textarea.form-control-lg {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #9926f0;
+  background-color: #909090;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2516,14 +2516,14 @@ textarea.form-control-lg {
   }
 }
 .form-range::-webkit-slider-thumb:active {
-  background-color: #e0befb;
+  background-color: #fbfafc;
 }
 .form-range::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #dee2e6;
+  background-color: #ecf4fd;
   border-color: transparent;
   border-radius: 1rem;
 }
@@ -10916,10 +10916,12 @@ textarea.form-control-lg {
   padding: 0 0 5rem 0;
 }
 .campanies__logo-box {
-  width: 50%; /* prendra la moitié de son parent */
-  min-width: 200px; /* mais jamais plus petit que 200px */
-  height: 3rem;
-  margin-bottom: 2rem;
+  width: 100%; /* prendra la moitié de son parent */
+  min-width: 150px; /* mais jamais plus petit que 150px */
+  height: 5rem;
+  margin: 0 auto 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   text-align: center;
   position: relative;
@@ -10930,9 +10932,10 @@ textarea.form-control-lg {
 }
 
 .campanies__logo-box img {
-  max-height: 200%;
-  max-width: 200%;
+  max-height: 100%;
+  max-width: 100%;
   object-fit: contain; /* garde les proportions sans déformation */
+  margin: 0 auto; 
 }
 .campanies__logo-box img:hover {
   filter: grayscale(120);
